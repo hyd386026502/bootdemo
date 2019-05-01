@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--引用base.xml设置-->
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <property name="LOG_HOME" value="E:/hydWork/logging"></property>
+    <!--按照每天滚动生成日志文件-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+　　　　　　<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+<!--　　　　　　　　　日志文件路径和名称格式化-->
+                <fileNamePattern>E:/hydWork/logging/bootDemo.%d{yyyy-MM-dd}.log</fileNamePattern>
+　　　　　　　　<maxHistory>30</maxHistory>
+　　　　　　</rollingPolicy>
+                <!--每条日志格式化-->
+　　　　　　<encoder>
+　　　　　　　　　<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+　　　　　　</encoder>
+            <!--日志文件最大的大小-->
+            <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+                <MaxFileSize>100MB</MaxFileSize>
+            </triggeringPolicy>
+    </appender>
+    <!--日志输出级别-->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+
+</configuration>

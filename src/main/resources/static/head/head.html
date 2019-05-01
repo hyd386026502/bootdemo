@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <!--react.js-->
+    <script src="/common/react.development.js"></script>
+    <script  src="/common/react-dom.development.js"></script>
+    <!-- babel 兼容es6和es5 -->
+    <script src="/common/babel.min.js"></script>
+    <!--antdesign-->
+    <!--<script src="/common/antd.js"></script>-->
+    <script  src="/common/antd.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="/common/antd.css" />-->
+    <link rel="stylesheet" type="text/css" href="/common/antd.min.css" />
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.3/antd.min.css" />-->
+
+</head>
+<body>
+<div id="example"></div>
+
+
+
+<script type="text/babel">
+
+    function HelloMessage(props) {
+        return  <Button type="primary">Button</Button>;
+    }
+
+    const element = <HelloMessage />;
+
+    ReactDOM.render(
+        element,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>
